@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account - Survey</title>
+    <link rel="stylesheet" href="home-style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="container" id="home-page">
+      <h1>My Account</h1>
+
+      <!-- FIELDSET and LEGENDS tags -->
+      <fieldset class="user-info">
+        <legend>User Information</legend>
+        <p><strong>Username:</strong> <span id="display-username"></span></p>
+        <p><strong>Email:</strong> <span id="display-email"></span></p>
+
+        <form id="update-info">
+          <label>First Name:</label>
+          <input type="text" id="first-name" placeholder="First Name" />
+
+          <label>Last Name:</label>
+          <input type="text" id="last-name" placeholder="Last Name" />
+
+          <!-- OPTION BUTTONS (RADIO) -->
+          <label>Gender:</label>
+          <div class="gender-options">
+            <label
+              ><input type="radio" name="gender" value="Male" /> Male</label
+            >
+            <label
+              ><input type="radio" name="gender" value="Female" /> Female</label
+            >
+            <label
+              ><input type="radio" name="gender" value="Other" /> Other</label
+            >
+          </div>
+
+          <label>Date of Birth:</label>
+          <input type="date" id="dob" />
+
+          <button type="submit" class="btn">Save Changes</button>
+        </form>
+      </fieldset>
+
+      <!-- MULTIPLE CHECKBOXES -->
+      <div class="survey-section">
+        <h2>Tell us about yourself</h2>
+
+        <div class="survey-group">
+          <h3>What are your favorite pets?</h3>
+          <label
+            ><input type="checkbox" name="favorite_pets" value="Cat" />
+            😺Cat</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_pets" value="Dog" />
+            🐶Dog</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_pets" value="Fish" />
+            🐟Fish</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_pets" value="Bird" />
+            🐦Bird</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_pets" value="Hamster" />
+            🐹Hamster</label
+          >
+        </div>
+
+        <div class="survey-group">
+          <h3>What are your favorite type of foods?</h3>
+          <label
+            ><input type="checkbox" name="favorite_foods" value="Vegetables" />
+            🥑Vegetables</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_foods" value="Meat" />
+            🥩Meat</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_foods" value="Fruits" />
+            🍇Fruits</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_foods" value="Seafood" />
+            🦀Seafood</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_foods" value="Salad" />
+            🥗Salad</label
+          >
+        </div>
+
+        <div class="survey-group">
+          <label for="favorite_hobby"
+            >What is your favorite hobby? (Select)</label
+          >
+          <select id="favorite_hobby" name="favorite_hobby[]" multiple>
+            <option value="Reading">📖Reading</option>
+            <option value="Writing">✍️Writing</option>
+            <option value="Traveling">✈️Traveling</option>
+            <option value="Gaming">🎮Gaming</option>
+            <option value="Sports & Fitness">🤾‍♀️Sports & Fitness</option>
+            <option value="Cooking & Baking">🍳Cooking & Baking</option>
+            <option value="Music">🎵Music (Listening, Playing, Singing)</option>
+            <option value="Arts & Crafts">🎨Arts & Crafts</option>
+            <option value="Watching Movies/TV Shows">
+              🎞️Watching Movies/TV Shows
+            </option>
+            <option value="Other">Other</option>
+          </select>
+          <input
+            type="text"
+            id="favorite_hobby_other"
+            name="favorite_hobby_other"
+            placeholder="Other (please specify)"
+          />
+        </div>
+
+        <div class="survey-group">
+          <label for="hobby_preference"
+            >Do you prefer indoor or outdoor hobby?</label
+          >
+          <select id="hobby_preference" name="hobby_preference">
+            <option value="Mostly indoor">🏡Mostly indoor</option>
+            <option value="Mostly outdoor">⛺Mostly outdoor</option>
+            <option value="A mix of both">🏕️A mix of both</option>
+          </select>
+        </div>
+
+        <!-- OPTGROUP tag -->
+        <div class="survey-group">
+          <label for="book_genres"
+            >What type of books or genres do you enjoy?</label
+          >
+          <select id="book_genres" name="book_genres">
+            <optgroup label="Fiction">
+              <option value="Fantasy">🔮 Fantasy</option>
+              <option value="Sci-Fi">🚀 Sci-Fi</option>
+              <option value="Mystery">🕵 Mystery</option>
+              <option value="Romance">💖 Romance</option>
+            </optgroup>
+            <optgroup label="Non-fiction">
+              <option value="Self-help">📘 Self-help</option>
+              <option value="Biographies">📖 Biographies</option>
+              <option value="History">🏛️ History</option>
+              <option value="Science">🔬 Science</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option value="Comics & Graphic Novels">
+                🦸 Comics & Graphic Novels
+              </option>
+              <option value="I don’t read much">📕 I don’t read much</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="survey-group">
+          <h3>Recommend a book:</h3>
+          <input type="text" name="recommend_book" placeholder="Book title" />
+        </div>
+
+        <div class="survey-group">
+          <label for="video_games"
+            >What kind of video games do you like to play?</label
+          >
+          <select id="video_games" name="video_games">
+            <option value="Action/Adventure">💥Action/Adventure</option>
+            <option value="RPG">🧙RPG (Role-playing games)</option>
+            <option value="FPS">🔫FPS (First-person shooter)</option>
+            <option value="Strategy/Puzzle">🧩Strategy/Puzzle</option>
+            <option value="Casual/Mobile Games">📱Casual/Mobile Games</option>
+            <option value="I don’t play games">🫠I don’t play games</option>
+          </select>
+        </div>
+
+        <div class="survey-group">
+          <label for="sports"
+            >Which sports or physical activities do you enjoy? (Select)</label
+          >
+          <select id="sports" name="sports[]" multiple>
+            <option value="Running/Jogging">🏃Running/Jogging</option>
+            <option value="Yoga/Pilates">🧘Yoga/Pilates</option>
+            <option value="Gym Workouts">🏋️Gym Workouts</option>
+            <option value="Team Sports">
+              ⚽Team Sports (Football, Basketball, etc.)
+            </option>
+            <option value="Swimming">🏊Swimming</option>
+            <option value="Hiking/Camping">🥾Hiking/Camping</option>
+            <option value="I don’t do sports">🫠I don’t do sports</option>
+          </select>
+        </div>
+
+        <div class="survey-group">
+          <h3>Do you prefer solo or group activities in your free time?</h3>
+          <label>
+            <input
+              type="checkbox"
+              name="activity_preference"
+              value="I prefer doing things alone"
+            />
+            🕴🏿I prefer doing things alone
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="activity_preference"
+              value="I enjoy group activities"
+            />
+            👥I enjoy group activities
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="activity_preference"
+              value="A mix of both"
+            />
+            👤👥A mix of both
+          </label>
+        </div>
+
+        <div class="survey-group">
+          <label for="music"
+            >What kind of music do you listen to? (Select)</label
+          >
+          <select id="music" name="music[]" multiple disabled>
+            <!-- DISABLED -->
+            <option value="Pop">👨🏻‍🎤Pop</option>
+            <option value="Rock">🎸Rock</option>
+            <option value="Jazz">🎷Jazz</option>
+            <option value="Classical">🎻Classical</option>
+            <option value="Hip-hop/Rap">📼Hip-hop/Rap</option>
+            <option value="Electronic/Dance">💃Electronic/Dance</option>
+            <option value="Country">🤠Country</option>
+            <option value="Other">Other</option>
+          </select>
+          <input
+            type="text"
+            id="music_other"
+            name="music_other"
+            placeholder="Other (please specify)"
+            readonly
+          />
+          <!-- READ ONLY -->
+        </div>
+
+        <div class="survey-group">
+          <label for="weekend">How do you usually spend your weekends?</label>
+          <select id="weekend" name="weekend">
+            <option value="Relaxing at home">💆🏻‍♀️Relaxing at home</option>
+            <option value="Going out with friends or family">
+              🫂Going out with friends or family
+            </option>
+            <option value="Engaging in hobbies">✍Engaging in hobbies</option>
+            <option value="Traveling/exploring new places">
+              🚵Traveling/exploring new places
+            </option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="survey-group">
+          <h3>What are your favorite drinks?</h3>
+          <label
+            ><input type="checkbox" name="favorite_drinks" value="Water" />
+            🥛Water</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_drinks" value="Coffee" />
+            ☕Coffee</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_drinks" value="Tea" />
+            🍵Tea</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_drinks" value="Juice" />
+            🧃Juice</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_drinks" value="Soda" />
+            🥤Soda</label
+          >
+        </div>
+
+        <div class="survey-group">
+          <h3>Which lifestyle choices best describe you?</h3>
+          <label
+            ><input type="checkbox" name="lifestyle_choices" value="Active" />
+            🏃🏻Active</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="lifestyle_choices"
+              value="Healthy Eating"
+            />
+            🥗Healthy Eating</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="lifestyle_choices"
+              value="Minimalist"
+            />
+            🛋️Minimalist</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="lifestyle_choices"
+              value="Eco-friendly"
+            />
+            🌱Eco-friendly</label
+          >
+          <label
+            ><input type="checkbox" name="lifestyle_choices" value="Social" />
+            👥Social</label
+          >
+        </div>
+
+        <div class="survey-group">
+          <h3>What are your favorite places to visit?</h3>
+          <label
+            ><input type="checkbox" name="favorite_places" value="Beach" />
+            🏝️Beach</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_places" value="Mountains" />
+            ⛰️Mountains</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_places" value="City" />
+            🌇City</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="favorite_places"
+              value="Countryside"
+            />
+            🏞️Countryside</label
+          >
+          <label
+            ><input type="checkbox" name="favorite_places" value="Theme Park" />
+            🎢Theme Park</label
+          >
+        </div>
+
+        <div class="survey-group">
+          <h3>Tell us about yourself.</h3>
+          <textarea
+            name="about_yourself"
+            rows="4"
+            placeholder="Your answer..."
+          ></textarea>
+          <!-- TEXT AREA CONTROL -->
+          <button type="reset" class="btn" id="reset-survey">Reset</button>
+        </div>
+        <!-- RESET -->
+
+        <button type="submit" class="btn" id="submit-survey">Submit</button>
+      </div>
+      <!-- SUBMIT -->
+
+      <button id="logout-btn" class="btn logout">Logout</button>
+    </div>
+    <button id="back-to-top" class="btn back-to-top">↑ Back to Top</button>
+  </body>
+</html>
